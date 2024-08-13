@@ -13,7 +13,7 @@ docker tag ${IMAGE_NAME}:${IMAGE_TAG} ${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_REGION}.am
 docker push ${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_REGION}.amazonaws.com/${IMAGE_NAME}:${IMAGE_TAG}
 ```
 
-## Test on Local
+## Test for Crawling on Local
 두 가지 방법 모두 `./lambda-crawler/` 디렉터리에서 실행합니다.
 `./lambda-crawler/event.json` 파일을 수정해서 다양한 상황에 대해 테스트할 수 있습니다.
 
