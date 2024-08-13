@@ -1,5 +1,5 @@
 # AWS-Lambda-Selenium-Crawling
-AWS Lambda에서 Docker 컨테이너 이미지를 통해 Selenium 크롤링을 하는 Dockerfile과 크롤링 스크립트입니다.
+AWS Lambda에서 selenium 크롤링을 위해 사용할 Docker 컨테이너 이미지를 위한 Dockerfile과 샘플 크롤링 스크립트입니다.
 
 ## Upload Selenium Docker Image on AWS ECR
 ```bash
