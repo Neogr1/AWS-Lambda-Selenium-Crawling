@@ -1,5 +1,5 @@
-# AWS-Lambda-Selenium-Crawling
-AWS Lambda에서 selenium 크롤링을 위해 사용할 Docker 컨테이너 이미지를 위한 Dockerfile과 샘플 크롤링 스크립트입니다.
+# Selenium-Crawling-on-AWS-Lambda
+Dockerfile and sample crawling script for a Docker container image for selenium crawling on AWS Lambda.
 
 ## Upload Selenium Docker Image on AWS ECR
 ```bash
@@ -14,21 +14,20 @@ docker push ${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_REGION}.amazonaws.com/${IMAGE_NAME}:
 ```
 
 ## Test for Crawling on Local
-두 가지 방법 모두 `./lambda-crawler/` 디렉터리에서 실행합니다.
-`./lambda-crawler/event.json` 파일을 수정해서 다양한 상황에 대해 테스트할 수 있습니다.
+You can modify the `event.json` file to test for different situations.
 
 ### Using SAM
 ```bash
-docker build -t selenium-chrome-driver .
+docker build -t ${IMAGE_NAME} .
 sam build
 sam local invoke Crawler --event event.json
 ```
 
 ### Using Docker Image
 ```bash
-docker build -t selenium-chrome-driver .
+docker build -t ${IMAGE_NAME} .
 docker run -p 9000:8080 selenium-chrome-driver
-# 아래는 새 터미널에서 실행
+# run the command below in new terminal
 curl -XPOST "http://localhost:9000/2015-03-31/functions/function/invocations" -d @event.json
 ```
 

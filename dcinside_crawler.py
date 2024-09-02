@@ -11,18 +11,16 @@ Output:
     ./result/dcinside_{query}_{start_datetime}_{end_datetime}.csv
 """
 
-import sys
-import os
 from time import sleep
 import multiprocessing as mp
+import itertools
+import urllib.parse
 import pandas as pd
 from bs4 import BeautifulSoup
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.chrome.options import Options as ChromeOptions
 from tempfile import mkdtemp
-import urllib.parse
-import itertools
 
 MAX_PAGE_ACCESS = 4
 WAIT_TIME = 1 # 페이지 로드를 기다리는 시간
